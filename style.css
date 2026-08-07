@@ -85,13 +85,15 @@ p {
 }
 
 .masthead .logo {
-  font-family: "Cardo", serif;
-  font-weight: 700;
-  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
-  letter-spacing: 0.12em;
-  line-height: 1;
-  color: var(--ink);
-  margin: 0;
+  display: block;
+  margin: 0 auto;
+  width: clamp(120px, 18vw, 220px);
+}
+
+.masthead .logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .masthead .tagline {
