@@ -895,3 +895,100 @@ textarea {
     max-width: 100%;
   }
 }
+
+/* =================== TEAM / AUTHOR LIST =================== */
+
+.team-page-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.team-page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+.team-page-title {
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  margin: 0 0 0.5rem;
+  color: var(--crimson);
+}
+
+.team-page-intro p {
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.team-member:first-child {
+  padding-top: 0;
+}
+
+.team-member:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.team-member-avatar {
+  flex: 0 0 120px;
+}
+
+.team-member-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+.team-member-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.team-member-name {
+  font-family: "Cardo", Georgia, serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+
+.team-member-bio {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.team-member-bio p {
+  margin: 0 0 0.75rem;
+}
+
+.team-member-bio p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .team-member {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .team-member-avatar {
+    flex: 0 0 auto;
+  }
+}
