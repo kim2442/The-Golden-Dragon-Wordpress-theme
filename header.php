@@ -22,7 +22,7 @@
         <a href="<?php echo esc_url(home_url('/')); ?>" class="<?php echo is_front_page() ? 'current' : ''; ?>">Home</a>
         <a href="<?php echo esc_url(home_url('/members')); ?>" class="<?php echo is_page('members') ? 'current' : ''; ?>">Members</a>
         <a href="<?php echo esc_url(home_url('/awards')); ?>" class="<?php echo is_page('awards') ? 'current' : ''; ?>">Awards</a>
-        <a href="<?php echo esc_url(home_url('/about')); ?>" class="<?php echo is_page('about') ? 'current' : ''; ?>">About KISPA</a>
+        <a href="<?php echo esc_url(home_url('/about')); ?>" class="<?php echo is_page('about') ? 'current' : ''; ?>">About us</a>
         <a href="<?php echo esc_url(home_url('/resources')); ?>" class="<?php echo is_page('resources') ? 'current' : ''; ?>">Resources</a>
       </div>
     </nav>
