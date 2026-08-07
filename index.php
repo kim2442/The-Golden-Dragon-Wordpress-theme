@@ -2,24 +2,22 @@
 get_header();
 
 /**
- * ============================================================================
  * HOW TO LIST NEW ARTICLES ON HOMEPAGE
- * Provide Post IDs in order:
- *  - [0]      => Hero Feature
- *  - [1, 2]   => Side List Stories (2 posts)
- *  - [3, 4, 5, etc]=> Featured Grid Cards (rest of the posts)
- * ============================================================================
+ * !!!!! Add or remove post IDs (available in admin panel) from the below list to add or remove posts from homepage.
+ * The thumbnails, blurbs, and title will automatically be populated.
+ *  VVVVVVVVVVVVVVVVVVVVVVV
  */
 $homepage_post_ids = array(52, 60);
 
 $hero_id      = isset($homepage_post_ids[0]) ? $homepage_post_ids[0] : null;
 $side_ids      = array_slice($homepage_post_ids, 1, 2);
-$grid_card_ids = array_slice($homepage_post_ids, 3, 3);
+// Takes all remaining IDs from index 3 onwards as grid cards
+$grid_card_ids = array_slice($homepage_post_ids, 3); 
 ?>
 
 <div class="date-ribbon">August 2026</div>
 
-<main class="page">
+<main class="homepage">
 
   <!-- ============ HERO + SIDE STORIES ============ -->
   <section class="hero-row">
@@ -35,7 +33,7 @@ $grid_card_ids = array_slice($homepage_post_ids, 3, 3);
         $f_pub       = get_post_meta($feature->ID, 'publication_name', true);
     ?>
       <a href="<?php echo esc_url($f_permalink); ?>">  
-	  	<article class="feature" <?php echo $f_thumb ? 'style="background-image:url(\'' . esc_url($f_thumb) . '\');"' : ''; ?>>
+      <article class="feature" <?php echo $f_thumb ? 'style="background-image:url(\'' . esc_url($f_thumb) . '\');"' : ''; ?>>
           <div class="feature-content">
             <?php if (!empty($f_pub)) : ?>
               <span class="kicker"><?php echo esc_html($f_pub); ?></span>
@@ -44,7 +42,7 @@ $grid_card_ids = array_slice($homepage_post_ids, 3, 3);
             <p class="byline"><?php echo esc_html($f_author); ?> · <?php echo esc_html($f_date); ?></p>
           </div>
         </article>
-	  </a>
+    </a>
     <?php 
       endif;
     endif; 
@@ -77,7 +75,7 @@ $grid_card_ids = array_slice($homepage_post_ids, 3, 3);
     </aside>
   </section>
 
-  <!-- ============ 3-UP FEATURED CARDS ============ -->
+  <!-- ============ FEATURED CARDS GRID ============ -->
   <section class="featured-grid">
     <?php
     foreach ($grid_card_ids as $c_id) :
@@ -108,22 +106,6 @@ $grid_card_ids = array_slice($homepage_post_ids, 3, 3);
         <span class="byline"><?php echo esc_html($author); ?> · <?php echo esc_html($date); ?></span>
       </article>
     <?php endforeach; ?>
-  </section>
-
-  <!-- ============ STATS BAR ============ -->
-  <section class="stats" aria-label="KISPA by the numbers">
-    <div class="stat">
-      <span class="num">3</span>
-      <span class="label">Member Publications</span>
-    </div>
-    <div class="stat">
-      <span class="num">10</span>
-      <span class="label">Student Journalists, Writers, and Editors</span>
-    </div>
- 	<div class="stat">
-  		<span class="num"><?php echo wp_count_posts()->publish; ?></span>
-  		<span class="label">Articles Published</span>
-	</div>
   </section>
 
   <!-- ============ MISSION BAND ============ -->
