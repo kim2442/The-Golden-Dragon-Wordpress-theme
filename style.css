@@ -189,6 +189,11 @@ p {
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  transition: filter 0.3s ease;
+}
+
+.feature:hover {
+  filter: saturate(1.2);
 }
 
 .feature::after {
@@ -380,6 +385,11 @@ p {
   background-size: cover;
   background-position: center;
   margin-bottom: 0.85rem;
+  transition: filter 0.3s ease;
+}
+
+.card:hover .thumb {
+  filter: saturate(1.2);
 }
 
 .card .kicker {
