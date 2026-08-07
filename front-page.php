@@ -110,13 +110,10 @@ $grid_card_ids = array_slice($homepage_post_ids, 3);
 
   <!-- ============ MISSION BAND ============ -->
   <section class="mission">
-    <div class="grid">
-      <div>
-        <h2>Connecting Student Journalists Across Korea</h2>
-        <p>KISPA is a student-led organization for student publications at international schools in Korea.</p>
-        <a href="<?php echo esc_url(home_url('/about')); ?>" class="btn">Learn More</a>
-        <a href="<?php echo esc_url(home_url('/members')); ?>" class="btn btn-outline">Member Directory</a>
-      </div>
+    <div>
+      <h2>Connecting Student Journalists Across Korea</h2>
+      <p>KISPA is a student-led organization for student publications at international schools in Korea.</p>
+      <a href="<?php echo esc_url(home_url('/about')); ?>" class="btn">Learn More</a>
     </div>
   </section>
 
@@ -134,7 +131,7 @@ $grid_card_ids = array_slice($homepage_post_ids, 3);
         $pub  = get_post_meta($s->ID, 'publication', true);
         $logo = get_the_post_thumbnail_url($s, 'medium');
       ?>
-        <div class="school">
+        <a class="school" href="<?php echo esc_url(get_permalink($s)); ?>">
           <?php if ($logo): ?>
             <div class="logo"><img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr($name); ?>"></div>
           <?php else: ?>
@@ -144,7 +141,7 @@ $grid_card_ids = array_slice($homepage_post_ids, 3);
           <?php if ($pub): ?>
             <div class="pub"><?php echo esc_html($pub); ?></div>
           <?php endif; ?>
-        </div>
+        </a>
       <?php endforeach; ?>
     </div>
   </section>

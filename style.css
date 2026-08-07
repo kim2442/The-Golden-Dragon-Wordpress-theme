@@ -109,11 +109,9 @@ p {
 
 .primary-nav {
   background: var(--navy);
-  border-top: 1px solid var(--navy-dark);
-  border-bottom: 1px solid var(--navy-dark);
 }
 
-.primary-nav .nav-inner {
+.primary-nav > div {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
@@ -433,14 +431,10 @@ p {
   margin: 2rem 0;
 }
 
-.mission .grid {
+.mission > div {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.25rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  align-items: start;
 }
 
 .mission h2 {
@@ -532,12 +526,18 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+}
+
+.school:hover,
+.school:focus {
+  text-decoration: none;
 }
 
 .school .logo {
   width: 100%;
-  max-width: 120px;
-  aspect-ratio: 1 / 1;
+  max-width: 150px;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,6 +550,12 @@ p {
   width: auto;
   height: auto;
   object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.school:hover .logo img,
+.school:focus .logo img {
+  transform: scale(1.08);
 }
 
 .school .name {
@@ -654,35 +660,9 @@ p {
   gap: 0.5rem;
 }
 
-/* =================== INTERNAL & ARTICLE PAGES =================== */
+/* =================== SINGLE ARTICLE =================== */
 
-.internal {
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1.25rem;
-}
-
-.internal h1 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.internal .post-meta {
-  color: var(--muted);
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-}
-
-.post-body {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  max-width: 70ch;
-}
-
-.articles-list .article-card {
+.article-card {
   display: grid;
   grid-template-columns: 1fr 160px;
   gap: 1.25rem;
@@ -691,32 +671,30 @@ p {
   align-items: start;
 }
 
-.articles-list .article-card h2 {
+.article-card h2 {
   font-size: 1.25rem;
   margin: 0 0 0.35rem;
 }
 
-.articles-list .article-card h2 a {
+.article-card h2 a {
   color: var(--ink);
   text-decoration: none;
 }
 
-.articles-list .article-card h2 a:hover {
+.article-card h2 a:hover {
   color: var(--crimson);
 }
 
-.articles-list .article-card p {
+.article-card p {
   color: var(--muted);
   margin: 0;
 }
 
-.articles-list .article-thumb {
+.article-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
-
-/* Single Article Layout */
 
 .article-layout {
   width: 70%;
@@ -734,16 +712,22 @@ p {
   color: var(--crimson);
 }
 
-.post-content {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 2rem;
+.post-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 70ch;
 }
 
 .post-meta {
-  color: #777;
+  color: var(--muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
+}
+
+.category-note {
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 1rem;
 }
 
 .sidebar {
@@ -752,112 +736,96 @@ p {
   padding: 1.5rem;
 }
 
-.articles article h2 {
-  margin: 0 0 0.3rem 0;
-  border-bottom: 3px solid var(--gold);
-  padding-bottom: 0.2rem;
-  color: var(--crimson);
-  font-size: 1.5rem;
-}
+/* =================== AUTHOR PAGE =================== */
 
-.articles article h2 a {
-  color: var(--crimson);
-  text-decoration: none;
-}
-
-.articles article h2 a:hover {
-  color: var(--gold);
-}
-
-.articles article p {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
-/* Author Page Styling */
 .author-page-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Author Profile Header */
 .author-profile {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding-bottom: 30px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
 }
 
-.author-avatar img {
-    border-radius: 50%;
-    display: block;
+.author-profile img {
+  border-radius: 50%;
 }
 
 .author-title {
-    margin: 0 0 10px 0;
-    font-size: 1.8rem;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
 }
 
 .author-bio {
-    color: #555;
-    line-height: 1.6;
+  color: #555;
+  line-height: 1.6;
 }
 
-/* Articles List */
 .author-articles h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .author-posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .author-post-card {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--rule);
+  padding: 20px 0;
+}
+
+.author-post-card:first-child {
+  padding-top: 0;
+}
+
+.author-post-card:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .author-post-card .post-title {
-    margin: 0 0 8px 0;
-    font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
 }
 
 .author-post-card .post-title a {
-    text-decoration: none;
-    color: #222;
+  text-decoration: none;
+  color: #222;
 }
 
 .author-post-card .post-title a:hover {
-    color: #0066cc;
+  color: var(--crimson);
 }
 
-.post-meta {
-    font-size: 0.85rem;
-    color: #888;
-    margin-bottom: 10px;
+.author-post-card time {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 
-.post-excerpt p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #444;
+.author-post-card .post-excerpt p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
 }
 
-/* Responsive adjustment for mobile */
 @media (max-width: 600px) {
-    .author-profile,
-    .author-post-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .author-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* Comments */
@@ -882,7 +850,6 @@ textarea {
 @media (max-width: 900px) {
   .hero-row,
   .featured-grid,
-  .mission .grid,
   .site-footer .grid,
   .article-layout {
     grid-template-columns: 1fr;
@@ -911,7 +878,7 @@ textarea {
   }
 
   .sidebar.articlesuggestions {
-    display: none; /* Hide sidebar on smol screens */
+    display: none; /* Hide sidebar on small screens */
   }
 }
 
@@ -919,12 +886,12 @@ textarea {
   .members .grid {
     grid-template-columns: 1fr;
   }
-  
-  .articles-list .article-card {
+
+  .article-card {
     grid-template-columns: 1fr;
   }
-  
-  .articles-list .article-thumb {
+
+  .article-thumb {
     max-width: 100%;
   }
 }

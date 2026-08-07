@@ -6,16 +6,16 @@ get_header();
 ?>
 
 <div class="article-layout">
-  <main class="articles">
+  <main>
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <article> 
+      <article>
         <h1 class="headline">
           <?php the_title(); ?>
-        </h1> 
-        
+        </h1>
+
         <p class="post-meta">
           <?php $author_link = get_author_posts_url( get_the_author_meta('ID') ); ?>
-          Published on <?php echo get_the_date('F j, Y'); ?> by 
+          Published on <?php echo get_the_date('F j, Y'); ?> by
           <a href="<?php echo esc_url( $author_link ); ?>">
             <?php echo get_the_author(); ?>
           </a>
@@ -24,12 +24,12 @@ get_header();
         <div class="post-body">
           <?php the_content(); ?>
         </div>
-      </article>
 
-      <p id="category"><i>Category: <?php the_category(', '); ?></i></p>
-      
-      <?php comments_template(); ?>
-      <p><small>Note: Comments may take a while to be displayed.</small></p>    
+        <p class="category-note">Category: <?php the_category(', '); ?></p>
+
+        <?php comments_template(); ?>
+        <p><small>Note: Comments may take a while to be displayed.</small></p>
+      </article>
     <?php endwhile; endif; ?>
   </main>
 
