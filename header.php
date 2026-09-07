@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+  <meta name="naver-site-verification" content="78bf00294ec9517f37338a17fc420514d9d97bf6" />
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><?php bloginfo('name'); ?></title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -13,7 +13,10 @@
         <img src="<?php echo esc_url( get_template_directory_uri() . '/images/wavepattern.gif' ); ?>"/>
     </div>
     <div class="banner">
-      <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/images/goldenlogo.png' ); ?>"/></a>
+      <a href="<?php echo esc_url(home_url('/')); ?>">
+		  <big><big><big style="color: white; margin-top: 3em;">The Golden Dragon</big></big></big>
+		  <!--<img src="<?php echo esc_url( get_template_directory_uri() . '/images/goldenlogo.png' ); ?>"/>-->
+	  </a>
       <span class="since"><i>Serving Taejon Christian International School since c. 1977</i></span>
     </div>
 
@@ -35,7 +38,7 @@
 
   </header>
   
-  <div class="issue">
-    <b>Current issue:</b> November 2025
-  </div>
+  <!-- <div class="issue">
+    <b>Current issue:</b> December 2025
+  </div> -->
   <main class="content">

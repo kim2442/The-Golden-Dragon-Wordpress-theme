@@ -5,6 +5,7 @@
     <a href="https://www.tcis.or.kr">TCIS Official Site</a>
     <a href="https://tcis.powerschool.com">Powerschool</a>
 	<a href="https://www.tcis.or.kr/lead/calendar">TCIS calendar</a>  
+	<a href="https://docs.google.com/spreadsheets/d/14T0YQYhxFx8FOc4k9unnVrUA5W7Kx8hGY6BJWsXZufU/edit?gid=0#gid=0">HL Hours</a>  
   </nav>
 
 <footer>
@@ -12,14 +13,14 @@
     <nav class="footer-links">
       <a href="https://www.instagram.com/tcisnewspaper/" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://www.facebook.com/friends/suggestions/?profile_id=61583305743556" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a>Contact: [a][b]@[c].com<br>(a = kimsh, b = 2027, c = tciscommunity)</a>
+      <a>Contact: [a]@[b].com<br>(a = goldendragon, b = tciscommunity)</a>
     </nav>
     <p class="footer-copyright">(c) The Golden Dragon. This is not an official website of TCIS. </p>
   </div>
 
   <div class="footer-right">
     <p>
-      <strong>The Golden Dragon</strong> has served as a voice of the TCIS secondary school since circa 1978, delivering student perspectives on a wide range of topics—from campus life and sports to global affairs and creative writing.
+      <strong>The Golden Dragon</strong> has served as a voice of the TCIS secondary school since circa 1978, delivering student perspectives on a wide range of topics—from campus life and sports to global affairs and creative writing. The logo—illustrated by Sabine L.—is distinct from the official dragon used by TCIS.
     </p>
     <br>
     <a href="<?php echo esc_url(home_url('/wp-admin')); ?>">Login</a>

@@ -33,6 +33,7 @@ get_header();
 
 
 <aside class="sidebar articlesuggestions"> <!--assigns two classes to one element--> <!--hidden if smol scrren-->
+	
     <h3>More from <i>The Golden Dragon</i>:</h3>
     <ul>
       <?php
