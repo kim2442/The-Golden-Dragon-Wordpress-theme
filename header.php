@@ -27,6 +27,7 @@
       <a href="https://docs.google.com/forms/d/1H_xmKV07h20juFSoEEyuv49wRiKzurTcfDkyP74aXz0/edit">Apply!</a>
       <a href="<?php echo esc_url(home_url('/past-issues')); ?>">Past Issues</a>
       <a href="<?php echo esc_url(home_url('/about')); ?>">About</a>
+      <a href="<?php echo esc_url(home_url('/team')); ?>">Team</a>
     </div>
 
     <form class="nav-search" method="get" action="https://www.goldendragon.news/">

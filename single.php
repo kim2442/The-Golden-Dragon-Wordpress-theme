@@ -25,6 +25,34 @@ get_header();
   </article>
 
 <p id="category"><i>Category: <?php the_category(', '); ?></i></p>
+
+  <?php
+  $author_id   = get_the_author_meta( 'ID' );
+  $author_link = get_author_posts_url( $author_id );
+  $author_bio  = get_the_author_meta( 'description' );
+  ?>
+  <aside class="author-card">
+    <div class="author-card-avatar">
+      <?php echo get_avatar( $author_id, 96 ); ?>
+    </div>
+    <div class="author-card-info">
+      <h3 class="author-card-name">
+        <a href="<?php echo esc_url( $author_link ); ?>">
+          <?php echo esc_html( get_the_author() ); ?>
+        </a>
+      </h3>
+      <?php if ( ! empty( $author_bio ) ) : ?>
+        <div class="author-card-bio">
+          <?php echo wp_kses_post( $author_bio ); ?>
+        </div>
+      <?php else : ?>
+        <div class="author-card-bio">
+          <a href="<?php echo esc_url( $author_link ); ?>">View all articles by <?php echo esc_html( get_the_author() ); ?> &rarr;</a>
+        </div>
+      <?php endif; ?>
+    </div>
+  </aside>
+
  <?php comments_template(); ?>
 	<p>Note: Comments may take a while to be displayed. </p>	
 
