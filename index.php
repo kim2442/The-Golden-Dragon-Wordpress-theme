@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section class="articles">
   <?php
-	
+	//TODO: replace with frontpage.php and not index.php
   // !!!!! Add or remove post IDs (available in admin panel) from the below list to add or remove posts from homepage.
   // the thumbnails, blurbs, and title will automatically be populated.
   // VVVVVVVVVVVVVVVVVVVVVVV
@@ -17,7 +17,7 @@
       $thumbnail = get_the_post_thumbnail($post, 'medium', ['class' => 'article-thumb']);
 
       if ($index === 0) :
-        // — Hero / featured card —
+        // — Hero card —
   ?>
       <article class="article-card featured">
         <?php if ($thumbnail) : ?>
@@ -35,7 +35,7 @@
 
   <?php
       elseif ($index === 1) :
-        // — Open the 2-up grid row and render article 2 —
+        // - 2-up grid  —
         $post3     = get_post($post_ids[2]);
         $title3    = $post3 ? get_the_title($post3)    : '';
         $excerpt3  = $post3 ? get_the_excerpt($post3)  : '';
@@ -76,7 +76,6 @@
 
   <?php
       elseif ($index === 2) :
-        // — Already rendered above inside the grid row, skip —
         continue;
 
       else :

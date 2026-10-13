@@ -3,14 +3,12 @@
  * Template Name: Team / Author List
  *
  * Renders a static list of users (name, profile picture, bio) populated
- * from the $team_user_ids array below. To add or remove a member, edit
- * the array — no other code needs to change.
  */
 
 get_header();
 
 /**
- * Automatically fetch all WordPress users, excluding user ID 8.
+ * Automatically fetch all WordPress users, excluding user ID 8 (ID 8 is an advertisement account).
  * To exclude additional users, add their IDs to the $excluded_user_ids array.
  */
 $excluded_user_ids = array( 8 );
@@ -19,9 +17,9 @@ $team_users        = get_users( array( 'exclude' => $excluded_user_ids ) );
 
 <main class="content">
   <section class="articles team-page">
-
+    <h1><?php the_title(); ?></h1>
     <header class="team-page-header">
-      <h1><?php the_title(); ?></h1>
+      <!--Fix later, no need for content-->
       <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <?php if ( get_the_content() ) : ?>
           <div class="team-page-intro"><?php the_content(); ?></div>

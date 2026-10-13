@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying archives
  *
  * @package The_Golden_Dragon
  */
@@ -19,11 +19,9 @@ get_header();
             ?>
         </header><section class="articles">
             <?php
-            /* Start the Loop */
             while ( have_posts() ) :
                 the_post();
 
-                // Get post data to match your Index format
                 $title     = get_the_title();
                 $excerpt   = get_the_excerpt();
                 $permalink = get_permalink();
